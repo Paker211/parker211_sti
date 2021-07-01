@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="hw1.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+      $(document).ready(function () {
+          $("#sel").on({
+            "mouseenter": fnToggleClass,
+            "mouseleave": fnToggleClass
+          });
+      });
+
+      function fnToggleClass() {
+        $("#about").toggleClass("active");
+      }
+  </script>
+</head>
+<body>
+    <div class="header">
+        <div class="option">
+            <p>首頁</p>
+        </div>
+        <div id="sel" class="option">
+            <p>關於我們</p>
+            <ul id="about" class="option-cont">
+                <li>簡介</li>
+                <li>聯絡方式</li>
+                <li>雲林科技大學</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

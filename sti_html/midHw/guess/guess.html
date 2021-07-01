@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#btnCheck").click(function(){
+        var ans=$("#txtAns").val();
+        var msg="錯誤！！提示：威爾是MISS";
+        if(ans=="女生"){
+          msg="正解:女生";
+        }
+        $("span").text(msg);
+      })
+      $("#txtAns").on({
+        "blur":function(){
+          $("#txtAns").css("background","yellow");
+        },
+        "focus":function(){
+         $("#txtAns").css("background","pink");
+        }
+
+      });
+
+    });
+  </script>
+</head>
+<body>
+  <h2>猜謎遊戲</h2>
+  <p>謎：威爾是男生還是女生？</p>
+  <p>答案：<input type="text" id="txtAns" /></p>
+  <p><input type="button" value="對答" id="btnCheck" /></p>
+  <span></span>
+
+</body>
+</html>
+

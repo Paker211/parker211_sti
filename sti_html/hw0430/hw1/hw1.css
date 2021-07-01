@@ -1,0 +1,33 @@
+
+.header{
+  height:100px;
+  weight:100%;
+  background-color:yellow;
+}
+
+.option{
+  float:left;
+  width:150px;
+  border:1px solid black;
+  text-align:center;
+  margin-top:5px;
+  margin-left:10px;
+  color:black;
+}
+
+.option-cont{
+  list-style-type:none;
+  padding:0;
+  display:none;
+}
+
+.option-cont li{
+  background-color:blue;
+  color:white;
+  border:1px solid #808080;
+  padding:10px;
+}
+
+.active{
+  display:block;
+}

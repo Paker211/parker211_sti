@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+  </head>
+  <body>
+    <form>
+      性別：<input type="radio" name="radGender" value="1" checked />男
+      <input type="radio" name="radGender" value="0"/>女<hr />
+      學歷：<input type="radio" name="radEdu" value="1" />國小
+      <input type="radio" name="radEdu" value="2" />國中
+      <input type="radio" name="radEdu" value="3" />高中職
+      <input type="radio" name="radEdu" value="4" checked />大學
+      <input type="radio" name="radEdu" value="5" />碩博士<hr />
+    </form>
+
+    <form>
+      <p>請問玩過那些類型電玩</p>
+      <input type="checkbox" name="chkGame" value="phone" checked />手遊
+      <input type="checkbox" name="chkGame" value="windows" />桌機
+      <input type="checkbox" name="chkGame" value="xbox" />XBox One
+      <input type="checkbox" name="chkGame" value="ps" checked />PS 4
+    </form>
+
+    <form>
+      <hr />
+      <p>請問玩過那些類型電玩</p>
+      <select name="selGame" multiple>
+        <option value="phone" selected>手遊</option>
+        <option value="windows">桌機</option>
+        <option value="xbox">XBox One</option>
+        <option value="ps" selected>PS 4</option>
+      </select>
+      <hr />
+    </form>
+
+    <form>
+      <textarea rows="4" cols="30" >請填寫意見</textarea>
+      <hr />
+    </form>
+
+    <form>
+      日期：<input type="date" name="txtDate" /><br />
+      時間：<input type="time" name="txtTime" /><br />
+      月份：<input type="month" name="txtMonth" /><br />
+      週次：<input type="week" name="txtWeek" /><br />
+      本地日期與時間：<input type="datetime-local" name="txtDatetime" /><br />
+      <hr />
+    </form>
+
+    <form>
+      信箱：<input type="email" name="txtEmail"  /><br />
+      官網：<input type="url" name="txtUrl" /><br />
+      電話：<input type="tel" name="txtTel" pattern="[0][9][0-9]{8}" /><br />
+      搜尋：<input type="search" name="txtSearch" /><br />
+      顏色：<input type="color" name="txtColor" /><br />
+      <input type="submit" value="提交" />
+    </form>
+  </body>
+</html>

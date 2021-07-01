@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        .header {
+            height: 100px;
+            width: 100%;
+            background-color: rgb(63, 67, 126);
+        }
+
+        .option {
+            float: left;
+            width: 150px;
+            border: 1px solid yellowgreen;
+            text-align: center;
+            margin-top: 5px;
+            margin-left: 10px;
+            color: rgb(187, 214, 31);
+        }
+
+        .option-cont {
+            list-style-type: none;
+            padding: 0;
+            display: none;
+        }
+
+        .option-cont li {
+            background-color: rgb(90, 73, 245);
+            color: rgb(223, 235, 64);
+            border: 1px solid #4aabfa;
+            padding: 10px;
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
+
+
+
+    <script>
+        // 網頁載入完成時執行
+        $(document).ready(function () {
+            //將#sel元素綁定mouseenter和mouseleave事件
+            //mouseenter和mouseleave事件被觸發時會執行fnToggleClass函式
+            //滑鼠碰到#sel顯示#about關於我們選單
+            //滑鼠離開#sel隱藏#about關於我們選單
+            $("#sel").on({
+                "mouseenter": fnToggleClass,
+                "mouseleave": fnToggleClass
+            });
+        });
+
+        function fnToggleClass() {
+            //切換顯示#about，即關於我們的選單
+            $("#about").toggleClass("active");
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="option">
+            <p>首頁</p>
+        </div>
+        <div id="sel" class="option">
+            <p>關於我們</p>
+            <ul id="about" class="option-cont">
+                <li>簡介</li>
+                <li>聯絡方式</li>
+                <li>雲林科技大學</li>
+            </ul>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+
+

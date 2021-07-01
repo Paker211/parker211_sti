@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+   <title></title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>
+       var index = 0;
+       var img = new Array("1.png", "2.png", "3.png");
+       var title = new Array("Picture1", "Picture2", "Picture3");
+       var info = new Array("one", "two", "three");
+
+       function toHTML(index) {
+           var hm = "<img src='/home/parker/Downloads/" + img[index] + "' width='75' style='float:left;margin:10px;'>";
+           hm += "<h3>" + title[index] + "</h3>";
+           hm += "<p>" + info[index] + "</p>";
+           return hm;
+       }
+       $("#div_cont").html(toHTML(index));
+       function fnNext() {
+           index++;
+           if (index >= img.length) {
+               index = 0; }
+               $("#div_cont").html(toHTML(index));
+           }
+   </script>
+</head>
+<body>
+   <div id="div_cont" style="border-style:solid"></div>
+   <p><input type="button" onclick="fnNext();" value="Next"></p>
+</body>
+</html>
+
+

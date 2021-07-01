@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    h2{
+      color:red;
+      font-size:50px;
+      margin:0px;
+      background-color:yellow;
+      text-align:center;
+    }
+  </style>
+  <title></title>
+</head>
+<body>
+  <h2>This is title</h2>
+  <p>HELLLO worrld</p>
+</body>
+</html>

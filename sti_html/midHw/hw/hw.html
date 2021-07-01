@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="hw.css">
+  <title></title>
+</head>
+<body>
+  <img src="/home/parker/Pictures/myprofile.jpeg" width="100" height="100">
+  <p class=text1>Name:劉承樸 </p><br />
+  <p class=text1>School:National Yunlin University of Science and Technology </p><br />
+  <p class=text1>Department:Department of Computer Science and Information Engineering </p><br />
+  <p class=text1>mail: b10817013@gemail.yuntech.edu.tw </p><br />
+  <hr>
+  <p class="text2">晚上12點整要做什麼事情？</p>
+  <form name='form' id='form'>
+    您的答案:
+    <input type="text" name='name' id='name' />
+    <input type="button" name='submit' value='submit' onclick='ff();' />
+  </form>
+
+  <script>
+    function ff(){
+      var a;
+      a = "抱佛腳";
+      const nameElement = document.getElementById("name");
+      const name = nameElement.value;
+      if( a==name ){
+        alert("Correct!!");
+      }
+      else{
+        alert("Wrong,(Hint:零時抱佛腳)");
+      }
+
+
+    }
+
+  </script>
+
+
+</body>
+</html>

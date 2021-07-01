@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+        .selProduct{
+            background:#b6ff00;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        // 按下 [訂購] 鈕執行此函式
+         function fnOrder(){
+             var num, product;
+             //取得txtNum文字欄的值
+             num = $("#txtNum").val();
+             //取得套用.selProduct類別的欄位值
+             product = $(".selProduct").val();
+             alert("您訂購了 " + num + " 個 " + product);
+         }
+    </script>
+</head>
+<body>
+    <form>
+        <p>數量：<input type="number" id="txtNum"></p>
+        <p>商品名稱：
+            <select class="selProduct">
+                <option value="iPhone X">iPhone 12</option>
+                <option value="switch">switch</option>
+                <option value="XBOX One">XBOX One</option>
+                <option value="PS5">PS5</option>
+            </select>
+        </p>
+        <p><input type="button" onclick="fnOrder()" value="訂購"></p>
+    </form>
+</body>
+</html>

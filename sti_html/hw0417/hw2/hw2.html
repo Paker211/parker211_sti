@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    .selProduct{
+        background:#b6ff00;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+    function fnOrder(){
+      var num, product;
+      num = $("#txtNum").val();
+      product = $(".selProduct").val();
+      alert("Your Order: " + product + ", Quantity: " + num );
+    }
+  </script>
+</head>
+<body>
+  <form>
+    <p>Quantity : <input type="number" id="txtNum"></p>
+    <p>Order Item :
+      <select class="selProduct" >
+        <option value="iPhone X">iPhone 12</option>
+        <option value="Switch">Switch</option>
+        <option value="XBOX one">XBOX one</option>
+        <option value="PS5">PS5</option>
+      </select>
+    </p>
+    <p><input type="button" onclick="fnOrder()" value="Order"></p>
+
+  </form>
+
+</body>
+</html>
+
