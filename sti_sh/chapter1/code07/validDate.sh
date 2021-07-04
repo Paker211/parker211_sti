@@ -1,6 +1,7 @@
 #! /bin/bash
 # valid-date
 
+normdate="../code03/monthNoToName.sh"
 
 function exceedsDaysInMonth(){
   # Return 0 --> Success
@@ -38,6 +39,42 @@ function isLeapYear(){
 }
 
 
+
 ## Main
 
+if [ $# -ne 3 ] ; then
+  echo "Usage: $0 month day year" >&2
+  echo "Typical input formats are Argust 3 1962 and 8 3 2002" >&2
+  exit 1
+fi
+
+#Normalize Date value
+
+newdate="$($normdate "$@")"
+
+if [ $? -eq 1 ] ; then
+  exit 1
+fi
+
+month="$(echo $newdate | cut -d\ -f1)"
+  day="$(echo $newdate | cut -d\ -f2)"
+ year="$(echo $newdate | cut -d\ -f3)"
+
+#Already normalize, and Check
+
+if ! exceedsDaysInMonth $month "$2" ; then
+  if [ "$month" = "Feb" -a $2 -eq 29 ] ; then
+    if ! isLeapYear $3 ; then
+      echo "$0: $3 is not a leap year, so Feb dosen't have 29 days" >&2
+      exit 1
+    fi
+  else
+    echo "$0: bad day value: $month doesn't have $2 days" >&2
+    exit 1
+  fi
+fi
+
+echo "Valid date: $newdate"
+
+exit 0
 
