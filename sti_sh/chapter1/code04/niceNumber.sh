@@ -3,8 +3,9 @@
 
 
 function nicenumber(){
-  integer=$(echo $1 | cut -d. -f1)
-  decimal=$(echo $1 | cut -d. -f2)
+
+  integer=$(echo $1 | cut -d. -f1)  ## 整數
+  decimal=$(echo $1 | cut -d. -f2)  ## 小數
 
   if [ $decimal != $1 ] ; then
     result="${DD:="."}$decimal"
@@ -14,12 +15,13 @@ function nicenumber(){
 
   while [ $thousands -gt 999 ] ; do
     remainder=$(( $thousands % 1000 ))
+
     while [ ${#remainder} -lt 3 ] ; do
       remainder="$0remainder"
     done
 
     thousands=$(( $thousands / 1000 ))
-    result="${TD:=","${remainder}${result}}"
+    result="${TD:=","}${remainder}${result}"
 
     nicenum="${thousands}${result}"
     if [ ! -z $2 ] ; then

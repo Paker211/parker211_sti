@@ -1,6 +1,6 @@
 #! /bin/bash
 # normalDate
-
+# Format --> month day year
 
 function monthnoToName(){
   case $1 in
@@ -17,7 +17,6 @@ function monthnoToName(){
 
 ## Main
 
-
 if [ $# -ne 3 ] ; then
   echo "usage: $0 month day year" >&2
   echo "Typical input format are August 3 1962 and 8 3 2002" >&2
@@ -32,7 +31,7 @@ fi
 if [ -z $(echo $1|sed 's/[[:digit:]]//g') ] ; then
   monthnoToName $1
 else
-  month="$(echo $1|cut -c1|tr '[:lower:]' '[:upper:]')"
+  month="$(echo $1|cut -c1 | tr '[:lower:]' '[:upper:]')"
   month="$month$(echo $1|cut -c2-3 | tr '[:upper:]' '[:lower:]')"
 fi
 

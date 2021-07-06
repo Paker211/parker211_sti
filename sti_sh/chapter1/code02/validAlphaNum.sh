@@ -5,6 +5,8 @@ function validAlphaNum(){
   # Return 0 --> Success (is Alpah or Num)
   # Return 1 --> Fail (is not Alpah or Num)
   compressed="$(echo $1 | sed -e 's/[^[:alnum:]]//g')"
+  echo "compress: $compressed"
+  echo "input: $input"
 
   if [ "$compressed" != "$input" ] ; then
     return 1
