@@ -11,6 +11,7 @@ function inpath(){
   for directory in $path
   do
     if [ -x $dirctory/$cmd ] ; then
+      # Success
       retval=0
     fi
   done
