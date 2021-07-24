@@ -31,16 +31,48 @@ Bash shell contain main prompt
    \[ --> the start of control code sequence
    \] --> the end of control code sequence
 
+
 #### Shell Variable( define, delete, readonly, type)
 
  - variable only store as String
+
  - three way define variable
     variable=value
     variable='value'
     variable="value"
- -
 
-#### Shell special variable
+ - Use variable
+    ${var_name}
+
+ - Different between ' ' and " "
+    print output inside ' '( all string )
+    print output inside " "( analyze var or command and out string )
+    comment: digital --> not quoute
+             all output --> use ' '
+             else --> use " "
+
+ - use command result assign variable
+    variable=$(command)  common use
+    variable=`command`
+    Ex: ( Same  )
+      log=$(cat log.txt)
+      log=`cat log.txt`
+
+ - Readonly
+    Ex:
+      readonly var_name
+
+ - Unset variable( delete var )
+    Ex:
+      unset var_name
+
+ - Type of variable( 3 )
+   1. local variable
+   2. envirnomental variable( usually capital )
+   3. shell variable
+
+
+### Shell special variable
 
    $0 -->
    $n -->
@@ -63,6 +95,53 @@ Bash shell contain main prompt
 
 
 #### Shell Comment
+
+
+
+#### Shell printf
+
+
+
+#### Shell if...else..
+
+
+
+#### Shell test
+
+
+
+#### Shell case...esac
+
+
+
+#### Shell for loop
+
+
+
+
+#### Shell while loop
+
+
+
+#### Shell until loop
+
+
+
+#### Shell break and continue in loop
+
+
+
+#### Shell function
+
+
+
+#### Shell function parameters
+
+
+
+#### Shell function
+
+
 
 
 
