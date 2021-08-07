@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="https://unpkg.com/vue@next"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+<body>
+  <div id="app">
+    {{ text }}
+    {{ name }}
+    {{ num }}
+    <input type="number" v-model="num" >
+    <!-- command (v-) -->
+    <hr>
+    {{ person.name }}
+    {{ person.image }}
+    <img :src="person.image" :alt="person.name" width="300">
+
+    <i class="bi bi-gender-male" v-if="person.gender === 'male' "></i>
+    <i class="bi bi-gender-female" v-else></i>
+    <hr>
+
+    <ul>
+      <li v-for="item in people">
+        {{ item.name }}
+        <img :src="item.image" alt="" width="300">
+        <i class="bi bi-gender-male" v-if="item.gender === 'male' "></i>
+        <i class="bi bi-gender-female" v-else></i>
+        {{ item.cash }}
+
+        <button type="button" @click="item.cash+=100">
+          Add
+        </button>
+
+        <hr>
+      </li>
+    </ul>
+
+  </div>
+
+  <script>
+    Vue.createApp({
+      // data function
+      data: function() {
+        return{
+          text: 'My name is Parker',
+          name: 'nickname is ornage',
+          // var num, value is 0
+          num: 0,
+          person: {
+            name: 'oranges',
+            image: '/home/parker211/Pictures/element.webp',
+            cash: 1000,
+            gender: 'male'
+          },
+          people: [
+            {
+              name: 'apple',
+              image: '/home/parker211/Pictures/apple.png',
+              cash: 9000,
+              gender: 'female'
+            },
+            {
+              name: 'banana',
+              image: '/home/parker211/Pictures/banana.jpeg',
+              cash: 2000,
+              gender: 'male'
+            }
+          ]
+        };
+      },
+      // methods Object
+      methods: {
+
+      },
+      // mounted function
+      mounted: function() {
+        console.log(this.text);
+
+        console.log(this.name);
+
+        console.log(this.person.image);
+      }
+    }).mount('#app');
+  </script>
+
+</body>
+</html>

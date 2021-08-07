@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <div id="text"></div>
+  <input type="number" id="num">
+  <script src="/home/parker211/demo/node_modules/jquery/dist/jquery.min.js"></script>
+  <script>
+    console.log($);
+    const personText = "I'm parker.";
+
+    $(document).ready(function(){
+      $('#text').text(personText);
+      $('#num').on('change', function(){
+          console.log($(this).val());
+      });
+    });
+
+  </script>
+
+</body>
+</html>

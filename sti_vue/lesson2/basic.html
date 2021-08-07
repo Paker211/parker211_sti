@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="https://unpkg.com/vue@next"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+<body>
+  <div id="app">
+    <input type="number" v-model.number="number">
+    {{ number }}
+    {{ typeof number }}
+    <br>
+    <br>
+    <input type="number" v-model="number2">
+    {{ number2 }}
+    {{ typeof number2 }}
+  </div>
+  <script >
+    Vue.createApp({
+      data() {
+        return {
+        number: 1 ,
+        number2: '1'
+        }
+      },
+      methods: {
+
+      },
+      mounted() {
+
+      }
+    }).mount('#app')
+  </script>
+
+</body>
+</html>

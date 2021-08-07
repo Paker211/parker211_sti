@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+<body>
+  <!-- DOM -->
+  <div id="app">
+    <!-- #1 呈現 text 在畫面上 -->
+    {{ text }}
+    <hr>
+    <!-- #2 使用 v-model 綁定 num 資料 -->
+    <input type="text" v-model="num">
+    {{ num }}
+    <hr>
+    <!-- #3 綁定 num 同時使用修飾符確保型別為 number -->
+    <input type="number" v-model.number="num">
+    {{ num }}
+    <hr>
+    <!-- #4 呈現 person.name 在畫面上 -->
+    {{ person.name }}
+    <hr>
+    <!-- #5 取出 person . image 並以圖片形式呈現在畫面上（使用 v-bind） -->
+    <img v-bind:src="person.image" alt="picture" height="200">
+    <!-- #6 將上述的 v-bind 改為縮寫形式 -->
+    <img :src="person.image" alt="picture" height="200">
+    <img :src="person.image" alt="picture" height="200">
+    <img :src="person.image" alt="picture" height="200">
+    <img :src="person.image" alt="picture" height="200">
+    <img :src="person.image" alt="picture" height="200">
+    <hr>
+    <!-- #7 使用 a 標籤搭配 method 將 person 參數傳入，用以修改 cash 金額 -->
+    <a href="#" v-on:click="changeCash(person)">click me</a>
+    {{ person.cash }}
+    <hr>
+    <!-- #8 為 v-on 加入修飾符 -->
+    <a href="#" v-on:click.prevent="changeCash(person)">click me</a>
+    {{ person.cash }}
+    <hr>
+    <!-- #9 使用 v-if 判斷 gender 的 icon 切換 -->
+    <!-- #10 使用 v-else 判斷另一個 -->
+    <i class="bi bi-gender-male" v-if="person.gender === 'male' "></i>
+    <i class="bi bi-gender-female" v-else></i>
+    <hr>
+    <!-- #11 使用 v-for 迴圈呈現 people 資料 -->
+    <ul>
+      <li v-for="item in people">
+        {{ item.name }}
+      </li>
+    </ul>
+    <hr>
+    <!-- #12 將 people 改為物件展示 -->
+    <ul>
+      <li v-for="(item, key) in peopleObj">
+        {{ item.name }} | key: {{ key }}
+        <input type=text" v-model="item.name">
+      </li>
+    </ul>
+    <hr>
+    <!-- #13 v-for 搭配 :key -->
+    <ul>
+      <li v-for="(item, key) in peopleObj" :key="key">
+        {{ item.name }} | key: {{ key }}
+      </li>
+    </ul>
+    <hr>
+
+    <!-- #14 v-for key 之問題（須將 people 改為陣列形式） -->
+
+    <!-- #15 呈現 people 中的資料 -->
+
+    <!-- #16 將 people 中的 name 綁定 v-model -->
+    <hr>
+    <button type="button" class="btn btn-outline-primary" :class="{ active: isActive }" v-on:click="isActive = !isActive">
+      Primary
+    </button>
+    {{ isActive }}
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.1.5/vue.global.min.js"></script>
+  <script>
+    Vue.createApp({
+      // data function
+      data: function() {
+        return{
+          isActive: false ,
+          text: 'My name is Parker',
+          name: 'nickname is ornage',
+          // var num, value is 0
+          num: 120,
+          person: {
+            name: 'oranges',
+            image: '/home/parker211/Pictures/element.webp',
+            cash: 1000,
+            gender: 'male'
+          },
+          people: [
+            {
+              name: 'apple',
+              image: '/home/parker211/Pictures/apple.png',
+              cash: 9000,
+              gender: 'female'
+            },
+            {
+              name: 'banana',
+              image: '/home/parker211/Pictures/banana.jpeg',
+              cash: 2000,
+              gender: 'male'
+            }
+          ],
+          peopleObj: {
+            apple: {
+              name: 'apple',
+              image: '/home/parker211/Pictures/apple.png',
+              cash: 9000,
+              gender: 'female'
+            },
+             banana: {
+              name: 'banana',
+              image: '/home/parker211/Pictures/banana.jpeg',
+              cash: 2000,
+              gender: 'male'
+            }
+          }
+        };
+      },
+      methods: {
+        changeCash( item ) {
+          item.cash+=100 ;
+        }
+      },
+      mounted() {
+
+      }
+    }).mount('#app')
+  </script>
+
+</body>
+</html>
