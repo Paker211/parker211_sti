@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <div id="app">
+    <button type="button" @click="addNum">num:{{ num }}</button>
+    <br>
+    dollarSign: {{ dollarSign(num) }}
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.1.5/vue.global.min.js"></script>
+  <script>
+    Vue.createApp({
+      data() {
+        return {
+          text: 'parker' ,
+          num:  10 ,
+        }
+      },
+      methods: {
+        addNum() {
+          console.log('addNum');
+          this.num += 10 ;
+        },
+        dollarSign( num ) {
+          console.log('dollarSign', num) ;
+          return `$${num}` ;
+        }
+      },
+      mounted() {
+        <!-- Initalize trigger -->
+        this.addNum();
+      }
+
+    }).mount('#app')
+
+
+  </script>
+</body>
+</html>

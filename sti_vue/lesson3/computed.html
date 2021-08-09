@@ -6,7 +6,9 @@
 </head>
 <body>
   <div id="app">
-    {{ text }}
+    <button type="button" @click="addNum">Num:{{ num }}</button>
+    <br>
+    computed: {{ doubleNum }}
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.1.5/vue.global.min.js"></script>
@@ -15,20 +17,26 @@
       data() {
         return {
           text: 'parker',
+          num: 10 ,
         }
       },
-      methods:  {
-        getText() {
-          console.log(this.text);
+      methods: {
+        addNum() {
+          console.log('addNum') ;
+          this.num += 10 ;
         }
       },
-      computed:{
-
+      computed: {
+        doubleNum() {
+          return this.num * 2 ;
+        }
       },
       mounted() {
-        this.getText();
+
       }
     }).mount('#app')
+
   </script>
+
 </body>
 </html>
