@@ -1,0 +1,26 @@
+
+  Jul_24 2021
+     CMS( Content Management System )
+     XSS( Cross-site scripting )
+      input(JS) execute as HTML
+      - Stored XSS
+      - Reflected XSS
+      - DOM-Based XSS( Document Object Model )
+     SQL injection
+      - Authorization Bypass
+      - Injecting SQL Sub-Statements into SQL Queries
+      - Exploiting Stored Procedures
+     path injection
+
+
+  Jul_25 2021
+     curl
+     JS event
+     burp suite( Learn )
+     WireShark( Learn )
+     Hack101 tutorial( https://www.youtube.com/results?search_query=Hacker101 )
+
+
+  Jul_25 2021
+     OWASP zap
+     switchyomega( proxy setting )

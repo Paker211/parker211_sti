@@ -1,0 +1,11 @@
+
+  Burp
+     Proxy     --> Brup run as web proxy, between browser and target Web server
+     Scanner   --> run web application and automated scan bug
+     Intruder  --> use intruder to brute force attack or FUZZING attack
+     Spider    --> web crawle, assist bulid siteMap
+     Repeater  --> manual control testing HTTP Request, can revise Request content(resend), and observe consequence
+     Decoder   --> let data encode or decode tool
+     Comparer  --> compare any two request/response tool
+     Extender  --> extension function( own or third party )
+     Sequencer --> analyze date randomness tools. can testing application's token, or other important data.
