@@ -7,5 +7,20 @@
      Repeater  --> manual control testing HTTP Request, can revise Request content(resend), and observe consequence.
      Decoder   --> let data encode or decode tool.
      Comparer  --> compare any two request/response tool.
-     Extender  --> extension function( own or third party ).
+     Extender  --> extension function( own or third party )
      Sequencer --> analyze date randomness tools. can testing application's token, or other important data.
+
+  Proxy
+     Intercept: the function of intercepting HTTP request and response through Burp Proxy.
+      - Forword, Drop, Intercept is on/off, Action
+      - content: Raw, Params, Header(include cookie), Hex
+     HTTP history: HTTP history through Proxy.
+     WebSockets history: history of WebSocket through Proxy.
+     options: Settings about Proxy and intercepting.
+
+  Target
+     manual site architecture exploration
+     define the scope of the goal
+     view items that have not been requested
+     discover hidden content
+     analyze the attack surface
