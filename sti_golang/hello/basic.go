@@ -16,6 +16,11 @@ func test() (int,string) {
   return 5, "Testing"
 }
 
+func add( xPtr *int ) {
+  *xPtr+=10
+  fmt.Println("call:",*xPtr)
+}
+
 func main() {
 
   /* -- type of golang variable --
@@ -148,6 +153,30 @@ func main() {
   a,s = test()
   fmt.Println( a, s )
   ------------------ */
+
+  /* -- Pointer  --
+  // Int pointer
+  var x int=19
+  fmt.Println( "x:", x  )
+  fmt.Println( "x Address:", &x )
+  var xPtr *int=&x
+  fmt.Println( "Original date:", *xPtr , "\n")
+  // String poniter
+  var word string="Hello"
+  fmt.Println( word )
+  var wordPtr *string=&word
+  fmt.Println( wordPtr )
+  var word2 string=*wordPtr
+  fmt.Println( word2 , "\n" )
+  ------------------ */
+
+  /* -- Call by Pointer --
+  ------------------ */
+  var x int=10
+  var xPtr *int=&x
+  add( xPtr )
+  fmt.Println( x )
+
 
 
 

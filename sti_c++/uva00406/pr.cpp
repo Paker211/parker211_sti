@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 int main() {
   int N, C ;
   while( cin >> N >> C ) {
@@ -45,6 +44,7 @@ int main() {
       }
       cout << endl ;
     }
+      cout << N << " " << C << ":" ;
     cout << endl ;
   }
 }
