@@ -21,6 +21,11 @@ func add( xPtr *int ) {
   fmt.Println("call:",*xPtr)
 }
 
+type Person struct{
+  name string
+  age int
+}
+
 func main() {
 
   /* -- type of golang variable --
@@ -171,16 +176,33 @@ func main() {
   ------------------ */
 
   /* -- Call by Pointer --
-  ------------------ */
   var x int=10
-  var xPtr *int=&x
-  add( xPtr )
+  add( &x )
   fmt.Println( x )
-
-
-
-
-
-  /* --  --
   ------------------ */
+
+  /* -- Struct --
+  var p1 Person=Person{"John", 20}
+  var p2 Person=Person{"Tommy", 23}
+  fmt.Println( p2.name, p2.age )
+  fmt.Println( p1.name, p1.age )
+  ------------------ */
+
+  /* -- Array --
+  ------------------ */
+
+  var arr [4]int=[4]int{3,10,-5,8}
+  var index int=0
+  for ;index<len(arr);index++{
+    fmt.Println( arr[index] )
+  }
+
+
+
+
+
+
+
+
+
 }
