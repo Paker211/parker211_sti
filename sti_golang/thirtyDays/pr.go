@@ -5,14 +5,21 @@ import (
 )
 
 func main() {
-  elements := make(map[string]string)
-  elements["Li"] = "Lithiun"
-  elements["Be"] = "Berry"
-  elements["F"] = "Fluorie"
-  elements["Ne"] = "Neon"
-
-  fmt.Println( elements["Li"] )
-
-
+  defer func() {
+    fmt.Println( "first" )
+    if err:=recover();err!=nil{
+      fmt.Println( err )
+    }
+    fmt.Println( "end" )
+  }()
+  f()
 }
+
+func f() {
+  fmt.Println( "test" )
+  panic(1)
+  fmt.Println( "test2" )
+}
+
+
 
