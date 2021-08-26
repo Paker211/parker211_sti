@@ -1,0 +1,20 @@
+real-time collaborative editor have two problem:
+  - real-time communication problem
+    - two soulation
+      1. long pull
+      2. webSocket
+  - edit conflict problem
+    - four methods
+      1. edit lock
+        someone edit content, and lock the page
+      2. GNU diff-patch
+        - diff-patch
+
+      3. Myer's diff-patch
+      4. Operational Transform( OT )
+      5. Distributed Operational Transform( OT )
+
+
+
+
+-- CRDT
