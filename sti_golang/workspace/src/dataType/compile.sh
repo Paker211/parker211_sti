@@ -2,4 +2,3 @@
 
 go build -o test ./*.go
 ./test
-
