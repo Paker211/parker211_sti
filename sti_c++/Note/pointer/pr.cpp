@@ -1,15 +1,36 @@
 #include<bits/stdc++.h>
 using namespace std ;
 
-void fun(int& p) {
-  p = 1 ;
-}
-
+class Box {
+  public :
+    Box(double l=2.0, double b=2.0, double h=2.0) {
+      cout << "Constructor called." << endl ;
+      length = l ;
+      breadth = b ;
+      height = h ;
+    }
+    double Volume() {
+      return length*breadth*height ;
+    }
+    int compare(Box box) {
+      return this->Volume() > box.Volume();
+    }
+  private :
+    double length ;
+    double breadth ;
+    double height ;
+};
 
 int main() {
-  int i=0 ;
+  Box Box1(3.3, 1.2, 1.5) ;
+  Box Box2(8.5, 6.0, 2.0) ;
 
-  fun(i) ;
-  cout << i << endl ;
+  if(Box1.compare(Box2)) {
+    cout << "Box2 is smaller than Box1." << endl ;
+  }
+  else {
+    cout << "Box1 is equal to or larger than Box1" << endl ;
+  }
 
+  return 0 ;
 }
