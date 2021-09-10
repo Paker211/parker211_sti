@@ -1,60 +1,86 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
+
 using namespace std;
-
-template <class T>
-class Stack {
+class Box {
   private :
-    vector<T> elems ;
+    int l, b, h ;
   public :
-    void push(T const&) ;
-    void pop() ;
-    T top() const ;
+    Box() { l = 0 ; b = 0 ; h = 0 ; }
+    Box(int length, int breadth, int height) { l = length ; b = breadth ; h = height ; }
+    Box(const Box& B) { l = B.l ; b = B.b ; h = B.h ; }
+    int getLength() { return l ; }
+    int getBreadth() { return b ; }
+    int getHeight() { return h ; }
+    long long CalculateVolume() {
+      return (long long)l*b*h ;
+    }
 
-    bool empty() const {
-      return elems.empty() ;
+    friend bool operator < (Box&A, Box&B) {
+      if( (A.l<B.l) || (A.b<B.b) && (A.l==B.l) || (A.h<B.h) && (A.l==B.l) && (A.b==B.b) ) {
+        return true ;
+      }
+      else {
+        return false ;
+      }
+    };
+
+    friend ostream& operator<< (ostream& output, const Box& B) {
+      output << B.l << " " << B.b << " " << B.h ;
+      return output ;
     }
 };
 
-template <class T>
-void Stack<T>::push (T const& elem) {
-  elems.push_back( elem ) ;
+
+
+void check2()
+{
+  int n;
+  cin>>n;
+  Box temp;
+  for(int i=0;i<n;i++)
+  {
+    int type;
+    cin>>type;
+    if(type ==1)
+    {
+      cout<<temp<<endl;
+    }
+    if(type == 2)
+    {
+      int l,b,h;
+      cin>>l>>b>>h;
+      Box NewBox(l,b,h);
+      temp=NewBox;
+      cout<<temp<<endl;
+    }
+    if(type==3)
+    {
+      int l,b,h;
+      cin>>l>>b>>h;
+      Box NewBox(l,b,h);
+      if(NewBox<temp)
+      {
+        cout<<"Lesser\n";
+      }
+      else
+      {
+        cout<<"Greater\n";
+      }
+    }
+    if(type==4)
+    {
+      cout<<temp.CalculateVolume()<<endl;
+    }
+    if(type==5)
+    {
+      Box NewBox(temp);
+      cout<<NewBox<<endl;
+    }
+
+  }
 }
 
-template <class T>
-void Stack<T>::pop () {
-  if( elems.empty() ) {
-    throw out_of_range("Stack<>::pop(): empty stack") ;
-  }
-
-  elems.pop_back() ;
-}
-
-template <class T>
-T Stack<T>::top  () const {
-  if( elems.empty() ) {
-    throw out_of_range("Stack<>::top(): empty stack") ;
-  }
-
-  return elems.back() ;
-}
-
-
-int main(){
-  try {
-    Stack<int> intStack ;
-    Stack<string> stringStack ;
-
-    intStack.push( 7 ) ;
-    cout << intStack.top() << endl ;
-
-    stringStack.push( "hello" ) ;
-    cout << stringStack.top() << std::endl ;
-    stringStack.pop() ;
-    stringStack.pop() ;
-
-  }
-  catch (exception const& ex) {
-    cerr << "Exception: " << ex.what() << endl ;
-    return -1 ;
-  }
+int main()
+{
+  check2();
 }
