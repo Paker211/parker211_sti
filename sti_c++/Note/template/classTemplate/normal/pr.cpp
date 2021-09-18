@@ -2,20 +2,19 @@
 using namespace std ;
 
 template<class T>
-//Printer.h
 class Printer {
   public :
-    T _t ;
-    Printer(T t) {
-      _t = t ;
+    T t ;
+    Printer(T _t){
+      t =  _t ;
     }
     void print() {
-      cout << _t << endl ;
+      cout << t << endl ;
     }
 };
 
 int main() {
-  Printer<int> p(100) ;
+  Printer<string> p("hello") ;
   p.print() ;
 
   return 0 ;
