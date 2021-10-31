@@ -1,4 +1,7 @@
 
-document.write( 5+9 ) ;
+let x, y, z ;
+x = 5 ;
+y = 10 ;
+z = x+y ;
 
-alert( 4+1 ) ;
+document.write( "x: " + x + ", y: " + y + ", z: " + z ) ;
