@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 list1 = ['h', 'e', 'l', 'l', 'o']
 print(list1)
 print(type(list1))

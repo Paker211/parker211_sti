@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 # Pr1
 i = []
 total = 0

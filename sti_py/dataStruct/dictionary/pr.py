@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 # Create dictionary
 # 1. Use {}
 desserts = {'Muffin':39, 'Scone':25, 'Biscuit':20}
@@ -64,16 +66,42 @@ print('dict1 == dict3 ?', dict1 == dict3)
 print('dict1 != dict2 ?', dict1 != dict2)
 # is operator: check whether is the same object
 print('dict1 is dict2 ?',dict1 is dict2)
+print()
 
-# Update element in dictionary, use [] OR = operator
+# Update element in dictionary, use [], = operator
+# if exist element chage value, if not exist create new element
+afterTea = {'Muffin':39, 'Scone':25, 'Biscuit':20}
+# Update value
+afterTea['Muffin'] = 50
+print(afterTea)
+# Create new element
+afterTea['croissant'] = 40
+print(afterTea)
+# setdefault(): if exist element doesn't chage value, if not exist create new element
+print(afterTea.setdefault('coffee',28))
+print(afterTea)
+# update(): addd another dictionary into current dictionary
+# if exist the same element, new element value replace origin vlaue
+newDesserts = {'macaron':43, 'crepe':59, 'coffee':6666}
+afterTea.update(newDesserts)
+print(afterTea)
 
+# Delete element in dictionary
+# Use del statement delete element
+del afterTea['coffee']
+del afterTea['Scone']
+print(afterTea)
+# pop(): delete element and return value
+print('marcon value:', afterTea.pop('macaron'))
+print(afterTea)
+# clear(): delete all element in dictionary, leave a empty dictionary
+afterTea.clear()
+print('afterTea clean:', afterTea)
 
-
-
-
-
-
-
+# Count dictionat elemeny quantity
+print()
+print(noonTea)
+print('Quantity:', len(noonTea))
 
 
 
