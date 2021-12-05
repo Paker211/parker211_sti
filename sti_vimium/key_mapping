@@ -1,0 +1,17 @@
+
+# Navigate
+map k scrollDown
+map l scrollUp
+
+# Manipulation of TAB
+map <c-j> previousTab
+map <c-;> nextTab
+mpa <c-w> removeTab
+map u restoreTab
+
+# Previous/Next Page
+map j goBack
+map ; goForward
+
+
+
