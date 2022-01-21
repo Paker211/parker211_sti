@@ -1,0 +1,9 @@
+{
+  "name": "demo7-formsInput",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@vue/cli": "^4.5.15"
+  }
+}
