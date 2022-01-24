@@ -1,0 +1,7 @@
+{
+  "jobs": [
+    { "title": "UX Designer", "id": "1", "details": "Amet suscipit qui voluptatibus mollitia cum. Eum eaque quibusdam atque qui dolores."},
+    { "title": "Web Developer", "id": "2", "details": "Adipisicing eveniet elit error excepturi eaque. Quidem nulla quidem iure ad repudiandae? "},
+    { "title": "Vue Developer", "id": "3", "details":"Sit suscipit voluptates ad omnis modi fugiat Placeat rerum repellendus ratione necessitatibus minima eius Expedita."}
+  ]
+}
