@@ -115,10 +115,13 @@ form.addEventListener('submit', (e: Event) => {
   e.preventDefault();
 
   let doc: HasFormatter;
+  let values: [string, string, number];
+  values = [tofrom.value, details.value, amount.valueAsNumber]
+
   if(type.value === 'invoice'){
-    doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+    doc = new Invoice(...values);
   } else{
-    doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+    doc = new Payment(...values);
   }
 
   console.log(doc);
@@ -127,5 +130,59 @@ form.addEventListener('submit', (e: Event) => {
 });
 
 
+// GENERICS
+const addUID = <T extends object>(obj: T) => {
+  let uid = Math.floor(Math.random() * 100 );
+  return {...obj, uid};
+}
+let docOne = addUID({name: 'yoshi', age: 40});
+console.log(docOne);
+
+// GENRERICS with interface
+interface Resource<T> {
+  uid: number;
+  resourceName: string;
+  data: T;
+}
+
+const docThree: Resource<string> = {
+  uid : 2,
+  resourceName: 'person',
+  data: 'shuan'
+}
+console.log(docThree);
+
+const docFour: Resource<number> = {
+  uid : 2,
+  resourceName: 'person',
+  data: 23
+}
+console.log(docFour);
 
 
+// ENUMS
+enum ResourceType { BOOK, AUTHOR, FILM, DIRECTOR, PERSON }
+
+interface Resour<T> {
+  uid : number,
+  resourceType: ResourceType,
+  data: T
+}
+
+const docFive: Resour<object> = {
+  uid : 20,
+  resourceType: ResourceType.BOOK,
+  data: { title: 'name of the wind' }
+}
+
+const docSix: Resour<object> = {
+  uid : 40,
+  resourceType: ResourceType.PERSON,
+  data: { name: 'peter' }
+}
+
+console.log(docFive, docSix)
+
+// Tuples v.s. arr
+let arr = ['heelo', 31, true];
+let tup: [string, number, boolean] = ['ryan', 34, false];

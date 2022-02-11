@@ -87,12 +87,56 @@ const list = new ListTemplate(ul);
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     let doc;
+    let values;
+    values = [tofrom.value, details.value, amount.valueAsNumber];
     if (type.value === 'invoice') {
-        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Invoice(...values);
     }
     else {
-        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Payment(...values);
     }
     console.log(doc);
     list.render(doc, type.value, 'start');
 });
+// GENERICS
+const addUID = (obj) => {
+    let uid = Math.floor(Math.random() * 100);
+    return Object.assign(Object.assign({}, obj), { uid });
+};
+let docOne = addUID({ name: 'yoshi', age: 40 });
+console.log(docOne);
+const docThree = {
+    uid: 2,
+    resourceName: 'person',
+    data: 'shuan'
+};
+console.log(docThree);
+const docFour = {
+    uid: 2,
+    resourceName: 'person',
+    data: 23
+};
+console.log(docFour);
+// ENUMS
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
+    ResourceType[ResourceType["AUTHOR"] = 1] = "AUTHOR";
+    ResourceType[ResourceType["FILM"] = 2] = "FILM";
+    ResourceType[ResourceType["DIRECTOR"] = 3] = "DIRECTOR";
+    ResourceType[ResourceType["PERSON"] = 4] = "PERSON";
+})(ResourceType || (ResourceType = {}));
+const docFive = {
+    uid: 20,
+    resourceType: ResourceType.BOOK,
+    data: { title: 'name of the wind' }
+};
+const docSix = {
+    uid: 40,
+    resourceType: ResourceType.PERSON,
+    data: { name: 'peter' }
+};
+console.log(docFive, docSix);
+// Tuples v.s. arr
+let arr = ['heelo', 31, true];
+let tup = ['ryan', 34, false];
