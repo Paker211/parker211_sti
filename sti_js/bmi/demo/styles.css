@@ -1,0 +1,28 @@
+h1 {
+  color: deeppink;
+}
+
+.list-card {
+  background: pink;
+  color: black;
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+.text-primary {
+  color: green;
+}
+.text-secondary {
+  color: blue;
+
+}
+.text-warning {
+  color: orange;
+
+}
+.text-danger {
+  color: red;
+}

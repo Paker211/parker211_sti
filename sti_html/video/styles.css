@@ -1,0 +1,21 @@
+:root {
+}
+
+.card {
+  --bg: #ddd;
+  width: 50%;
+  height: 100px;
+  background: var(--bg);
+}
+
+.box {
+  width: 30%;
+  height: 100px;
+  background: var(--bg, red);
+}
+
+@media(max-width:980px) {
+  :root {
+    --bg: black;
+  }
+}

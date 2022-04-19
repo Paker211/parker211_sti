@@ -1,0 +1,12 @@
+.text-overThin {
+  color: green;
+}
+.text-normal {
+  color: blue;
+}
+.text-warning {
+  color: orange;
+}
+.text-danger {
+  color: red;
+}
